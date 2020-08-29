@@ -14,7 +14,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using Stocker.Application.Implementations;
+using Stocker.Application.Interfaces;
+using Stocker.Application.Repositories;
 using Stocker.Data;
+using Stocker.Data.Repositories;
 
 namespace Stocker.API
 {
@@ -105,12 +109,12 @@ namespace Stocker.API
 
         private void ConfigureRepositories(IServiceCollection services)
         {
-
+            services.AddTransient<ICategoryService, CategoryService>();
         }
 
         private void ConfigureApplicationServices(IServiceCollection services)
         {
-
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
         }
     }
 }
