@@ -1,2 +1,1 @@
-# Stocker-Backend
-API for Stocker project
+# FIFA-Backend

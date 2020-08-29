@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stocker.API", "Stocker.API\Stocker.API.csproj", "{2D0688CB-9D01-4809-B85E-F1BAE59A95CA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5ABC9D03-EFDB-4CC5-B874-524ACEED1614} = {5ABC9D03-EFDB-4CC5-B874-524ACEED1614}
+		{EB5B668C-E1C6-4768-876D-B737AE8CF190} = {EB5B668C-E1C6-4768-876D-B737AE8CF190}
+		{58AC96D8-09F8-4349-8A67-87505DB37D9F} = {58AC96D8-09F8-4349-8A67-87505DB37D9F}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stocker.Application", "Stocker.Application\Stocker.Application.csproj", "{5ABC9D03-EFDB-4CC5-B874-524ACEED1614}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EB5B668C-E1C6-4768-876D-B737AE8CF190} = {EB5B668C-E1C6-4768-876D-B737AE8CF190}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stocker.Data", "Stocker.Data\Stocker.Data.csproj", "{58AC96D8-09F8-4349-8A67-87505DB37D9F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5ABC9D03-EFDB-4CC5-B874-524ACEED1614} = {5ABC9D03-EFDB-4CC5-B874-524ACEED1614}
+		{EB5B668C-E1C6-4768-876D-B737AE8CF190} = {EB5B668C-E1C6-4768-876D-B737AE8CF190}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stocker.Domain", "Stocker.Domain\Stocker.Domain.csproj", "{EB5B668C-E1C6-4768-876D-B737AE8CF190}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D0688CB-9D01-4809-B85E-F1BAE59A95CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D0688CB-9D01-4809-B85E-F1BAE59A95CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D0688CB-9D01-4809-B85E-F1BAE59A95CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D0688CB-9D01-4809-B85E-F1BAE59A95CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ABC9D03-EFDB-4CC5-B874-524ACEED1614}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ABC9D03-EFDB-4CC5-B874-524ACEED1614}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ABC9D03-EFDB-4CC5-B874-524ACEED1614}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ABC9D03-EFDB-4CC5-B874-524ACEED1614}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58AC96D8-09F8-4349-8A67-87505DB37D9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58AC96D8-09F8-4349-8A67-87505DB37D9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58AC96D8-09F8-4349-8A67-87505DB37D9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58AC96D8-09F8-4349-8A67-87505DB37D9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB5B668C-E1C6-4768-876D-B737AE8CF190}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB5B668C-E1C6-4768-876D-B737AE8CF190}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB5B668C-E1C6-4768-876D-B737AE8CF190}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB5B668C-E1C6-4768-876D-B737AE8CF190}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {86BED5A7-6689-4CEC-A348-D85E9F0FF2B6}
+	EndGlobalSection
+EndGlobal
