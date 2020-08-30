@@ -22,13 +22,17 @@ namespace Stocker.Data.Repositories
 
         public async Task<List<Product>> Get()
         {
-            var productList = await _ctx.Products.ToListAsync();
+            var productList = await _ctx.Products
+                                            .Include(e => e.Category)
+                                            .ToListAsync();
             return _mapper.Map<List<Product>>(productList);
         }
 
         public async Task<Product> Get(int id)
         {
-            var product = await _ctx.Products.FirstOrDefaultAsync(c => c.ProductId == id);
+            var product = await _ctx.Products
+                                    .Include(e => e.Category)
+                                    .FirstOrDefaultAsync(c => c.ProductId == id);
             return _mapper.Map<Product>(product);
         }
 
