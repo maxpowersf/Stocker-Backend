@@ -11,6 +11,7 @@ namespace Stocker.Domain
         public string Photo { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
+        public string CategoryName { get { return Category != null ? Category.Name : null; } }
         public decimal Stock { get; set; }
         public decimal MinimumAccepted { get; set; }
         public decimal MinimumRequired { get; set; }
