@@ -110,11 +110,13 @@ namespace Stocker.API
         private void ConfigureRepositories(IServiceCollection services)
         {
             services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IProductService, ProductService>();
         }
 
         private void ConfigureApplicationServices(IServiceCollection services)
         {
             services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<IProductRepository, ProductRepository>();
         }
     }
 }
