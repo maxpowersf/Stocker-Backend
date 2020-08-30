@@ -1,10 +1,7 @@
 ﻿using AutoMapper;
 using Stocker.API.DTO;
+using Stocker.Data.Entities;
 using Stocker.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Stocker.API.Mapper
 {
@@ -13,8 +10,12 @@ namespace Stocker.API.Mapper
         public MapperConfig()
         {
             CreateMap<CategoryDTO, Category>();
-            CreateMap<Category, Data.Entities.Categories>()
+            CreateMap<Category, Categories>()
                 .ForMember(e => e.CategoryId, opt => opt.MapFrom(e => e.Id)).ReverseMap();
+
+            CreateMap<ProductDTO, Product>();
+            CreateMap<Product, Products>()
+                .ForMember(e => e.ProductId, opt => opt.MapFrom(e => e.Id)).ReverseMap();
         }
     }
 }
