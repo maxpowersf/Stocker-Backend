@@ -4,6 +4,7 @@ using Stocker.Application.Repositories;
 using Stocker.Domain;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,11 +21,13 @@ namespace Stocker.Data.Repositories
             this._mapper = mapper;
         }
 
-        public async Task<List<Product>> Get()
+        public async Task<List<Product>> Get(bool excludehighstock)
         {
             var productList = await _ctx.Products
                                             .Include(e => e.Category)
+                                            .Where(e => e.Stock < e.MinimumAccepted || !excludehighstock)
                                             .ToListAsync();
+
             return _mapper.Map<List<Product>>(productList);
         }
 
