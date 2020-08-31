@@ -8,7 +8,7 @@ namespace Stocker.Application.Repositories
 {
     public interface IProductRepository
     {
-        Task<List<Product>> Get();
+        Task<List<Product>> Get(bool excludehighstock);
         Task<Product> Get(int id);
         Task Add(Product product);
         void Update(Product product);
