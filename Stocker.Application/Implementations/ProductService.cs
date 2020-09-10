@@ -39,6 +39,18 @@ namespace Stocker.Application.Implementations
             await _productRepository.SaveChanges();
         }
 
+        public async Task UpdateAll(List<Product> products)
+        {
+            foreach (Product newProduct in products)
+            {
+                Product product = await _productRepository.Get(newProduct.Id);
+                product.Stock += newProduct.Stock;
+                _productRepository.Update(product);
+            }
+
+            await _productRepository.SaveChanges();
+        }
+
         public async Task Delete(int id)
         {
             await _productRepository.Delete(id);

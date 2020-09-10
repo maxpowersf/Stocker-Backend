@@ -49,6 +49,13 @@ namespace Stocker.API.Controllers
             return new OkObjectResult(true);
         }
 
+        [HttpPut("UpdateAll")]
+        public async Task<IActionResult> UpdateAll([FromBody] ProductsArrayDTO productsDTO)
+        {
+            await _productService.UpdateAll(_mapper.Map<List<Product>>(productsDTO.Product));
+            return new OkObjectResult(true);
+        }
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

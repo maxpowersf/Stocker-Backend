@@ -12,6 +12,7 @@ namespace Stocker.Application.Interfaces
         Task<Product> Get(int id);
         Task Add(Product product);
         Task Update(Product product);
+        Task UpdateAll(List<Product> products);
         Task Delete(int id);
     }
 }

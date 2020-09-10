@@ -33,7 +33,7 @@ namespace Stocker.Data.Repositories
 
         public async Task<Product> Get(int id)
         {
-            var product = await _ctx.Products
+            var product = await _ctx.Products.AsNoTracking()
                                     .Include(e => e.Category)
                                     .FirstOrDefaultAsync(c => c.ProductId == id);
             return _mapper.Map<Product>(product);
