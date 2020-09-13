@@ -44,7 +44,7 @@ namespace Stocker.Application.Implementations
             foreach (Product newProduct in products)
             {
                 Product product = await _productRepository.Get(newProduct.Id);
-                product.Stock += newProduct.Stock;
+                product.Stock = newProduct.Stock;
                 _productRepository.Update(product);
             }
 
