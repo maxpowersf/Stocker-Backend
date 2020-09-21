@@ -37,6 +37,8 @@ namespace Stocker.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<bool>("Active");
+
                     b.Property<int>("CategoryId");
 
                     b.Property<decimal>("MinimumAccepted");
@@ -48,6 +50,8 @@ namespace Stocker.Data.Migrations
                     b.Property<string>("Photo");
 
                     b.Property<decimal>("Stock");
+
+                    b.Property<int>("TypeID");
 
                     b.HasKey("ProductId");
 
