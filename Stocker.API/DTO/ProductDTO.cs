@@ -10,9 +10,11 @@ namespace Stocker.API.DTO
         public int Id { get; set; }
         public string Name { get; set; }
         public string Photo { get; set; }
+        public int Type { get; set; }
         public int CategoryId { get; set; }
         public decimal Stock { get; set; }
         public decimal MinimumAccepted { get; set; }
         public decimal MinimumRequired { get; set; }
+        public bool Active { get; set; }
     }
 }

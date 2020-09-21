@@ -8,7 +8,7 @@ namespace Stocker.Application.Interfaces
 {
     public interface IProductService
     {
-        Task<List<Product>> Get(bool excludehighstock);
+        Task<List<Product>> Get(bool excludehighstock, bool excludeinactive);
         Task<Product> Get(int id);
         Task Add(Product product);
         Task Update(Product product);
