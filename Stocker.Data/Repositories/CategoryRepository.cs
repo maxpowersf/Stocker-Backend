@@ -4,6 +4,7 @@ using Stocker.Application.Repositories;
 using Stocker.Domain;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,7 +23,9 @@ namespace Stocker.Data.Repositories
 
         public async Task<List<Category>> Get()
         {
-            var categoryList = await _ctx.Categories.ToListAsync();
+            var categoryList = await _ctx.Categories
+                                            .OrderBy(e => e.Name)
+                                            .ToListAsync();
             return _mapper.Map<List<Category>>(categoryList);
         }
 
