@@ -27,6 +27,7 @@ namespace Stocker.Data.Repositories
                                             .Include(e => e.Category)
                                             .Where(e => (e.Stock < e.MinimumAccepted || !excludehighstock)
                                                     && (e.Active || !excludeinactive))
+                                            .OrderBy(e => e.Name)
                                             .ToListAsync();
 
             return _mapper.Map<List<Product>>(productList);
