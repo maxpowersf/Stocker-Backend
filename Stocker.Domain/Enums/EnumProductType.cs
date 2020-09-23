@@ -6,8 +6,8 @@ namespace Stocker.Domain.Enums
 {
     public enum EnumProductType
     {
-        ByUnit = 0,
-        ByWeight100 = 1,
-        ByWeight250 = 2
+        ByUnit = 1,
+        ByWeight100 = 2,
+        ByWeight250 = 3
     }
 }
