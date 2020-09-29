@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Stocker.Data;
 
 namespace Stocker.Data.Migrations
 {
     [DbContext(typeof(StockerContext))]
-    partial class StockerContextModelSnapshot : ModelSnapshot
+    [Migration("20200929220905_AddedCategoryType")]
+    partial class AddedCategoryType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
