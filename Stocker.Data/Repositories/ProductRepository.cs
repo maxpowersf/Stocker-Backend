@@ -21,12 +21,13 @@ namespace Stocker.Data.Repositories
             this._mapper = mapper;
         }
 
-        public async Task<List<Product>> Get(bool excludehighstock, bool excludeinactive)
+        public async Task<List<Product>> Get(int categoryTypeId, bool excludehighstock, bool excludeinactive)
         {
             var productList = await _ctx.Products
                                             .Include(e => e.Category)
                                             .Where(e => (e.Stock < e.MinimumAccepted || !excludehighstock)
-                                                    && (e.Active || !excludeinactive))
+                                                    && (e.Active || !excludeinactive)
+                                                    && (e.Category.TypeId == categoryTypeId || categoryTypeId == 0))
                                             .OrderBy(e => e.Name)
                                             .ToListAsync();
 

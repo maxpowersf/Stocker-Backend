@@ -17,9 +17,9 @@ namespace Stocker.Application.Implementations
             this._productRepository = productRepository;
         }
 
-        public Task<List<Product>> Get(bool excludehighstock, bool excludeinactive)
+        public Task<List<Product>> Get(int categoryTypeId, bool excludehighstock, bool excludeinactive)
         {
-            return _productRepository.Get(excludehighstock, excludeinactive);
+            return _productRepository.Get(categoryTypeId, excludehighstock, excludeinactive);
         }
 
         public Task<Product> Get(int id)

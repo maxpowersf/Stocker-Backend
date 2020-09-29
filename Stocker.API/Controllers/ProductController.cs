@@ -23,10 +23,10 @@ namespace Stocker.API.Controllers
             this._mapper = mapper;
         }
 
-        [HttpGet("{excludehighstock:bool?}/{excludeinactive:bool?}")]
-        public async Task<IActionResult> Get(bool excludehighstock, bool excludeinactive)
+        [HttpGet("{excludehighstock:bool?}/{excludeinactive:bool?}/{categoryTypeId:int?}")]
+        public async Task<IActionResult> Get(bool excludehighstock, bool excludeinactive, int categoryTypeId)
         {
-            return new OkObjectResult(await _productService.Get(excludehighstock, excludeinactive));
+            return new OkObjectResult(await _productService.Get(categoryTypeId, excludehighstock, excludeinactive));
         }
 
         [HttpGet("{id}")]

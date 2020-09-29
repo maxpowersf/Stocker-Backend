@@ -10,9 +10,12 @@ namespace Stocker.API.Mapper
     {
         public MapperConfig()
         {
-            CreateMap<CategoryDTO, Category>();
+            CreateMap<CategoryDTO, Category>()
+                .ForMember(e => e.Type, opt => opt.MapFrom(e => (EnumCategoryType)e.Type));
             CreateMap<Category, Categories>()
-                .ForMember(e => e.CategoryId, opt => opt.MapFrom(e => e.Id)).ReverseMap();
+                .ForMember(e => e.CategoryId, opt => opt.MapFrom(e => e.Id))
+                .ForMember(e => e.TypeId, opt => opt.MapFrom(e => (int)e.Type))
+                    .ReverseMap().ForMember(e => e.Type, opt => opt.MapFrom(e => (EnumCategoryType)e.TypeId));
 
             CreateMap<ProductDTO, Product>()
                 .ForMember(e => e.Type, opt => opt.MapFrom(e => (EnumProductType)e.Type));
