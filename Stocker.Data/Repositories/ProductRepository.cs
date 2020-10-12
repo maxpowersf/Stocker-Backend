@@ -25,7 +25,7 @@ namespace Stocker.Data.Repositories
         {
             var productList = await _ctx.Products
                                             .Include(e => e.Category)
-                                            .Where(e => (e.Stock < e.MinimumAccepted || !excludehighstock)
+                                            .Where(e => (e.Stock <= e.MinimumAccepted || !excludehighstock)
                                                     && (e.Active || !excludeinactive)
                                                     && (e.Category.TypeId == categoryTypeId || categoryTypeId == 0))
                                             .OrderBy(e => e.Name)
